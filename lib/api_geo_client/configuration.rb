@@ -127,7 +127,7 @@ module ApiGeoClient
     def initialize
       @scheme = 'https'
       @host = 'geo.api.gouv.fr'
-      @base_path = 'https://geo.api.gouv.fr/'
+      @base_path = '/'
       @api_key = {}
       @api_key_prefix = {}
       @timeout = 0
@@ -165,8 +165,6 @@ module ApiGeoClient
     end
 
     def base_path=(base_path)
-      # Add leading and trailing slashes to base_path
-      @base_path = "/#{base_path}".gsub(/\/+/, '/')
       @base_path = '' if @base_path == '/'
     end
 
